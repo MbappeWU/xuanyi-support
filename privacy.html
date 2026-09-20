@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>玄仪 隐私政策</title>
+<style>
+:root { color-scheme: light dark; --ink: #17202a; --muted: #5d6b7a; --line: #dfe4ea; --bg: #ffffff; }
+@media (prefers-color-scheme: dark) { :root { --ink: #e9eef5; --muted: #a3b0be; --line: #2b3440; --bg: #11151b; } }
+* { box-sizing: border-box; }
+body { margin: 0 auto; padding: 32px 16px 96px; max-width: 46rem; background: var(--bg); color: var(--ink);
+  font: 16px/1.75 -apple-system, "PingFang SC", "Helvetica Neue", Arial, sans-serif; }
+h1 { font-size: 1.7rem; line-height: 1.3; margin: 0 0 4px; }
+h2 { font-size: 1.2rem; margin: 2.2rem 0 .6rem; padding-top: 1.2rem; border-top: 1px solid var(--line); }
+h3 { font-size: 1.02rem; margin: 1.4rem 0 .4rem; }
+p, li { color: var(--ink); }
+blockquote { margin: 1rem 0; padding: .6rem 1rem; border-left: 3px solid var(--line); color: var(--muted); }
+code { font-family: ui-monospace, SFMono-Regular, Menlo, monospace; font-size: .92em; }
+table { width: 100%; border-collapse: collapse; margin: 1rem 0; font-size: .94rem; }
+th, td { border: 1px solid var(--line); padding: .5rem .6rem; text-align: left; vertical-align: top; }
+a { color: inherit; text-underline-offset: 3px; }
+.meta { color: var(--muted); font-size: .92rem; margin-bottom: 1.6rem; }
+nav { margin-bottom: 2rem; font-size: .94rem; }
+footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line); color: var(--muted); font-size: .9rem; }
+</style>
+</head>
+<body>
+<nav><a href="./">← 玄仪支持</a></nav>
+<h1>玄仪 隐私政策</h1>
+<p class="meta">生效日期：2026 年 9 月 20 日 · 适用版本 1.0</p>
+
+<h2>一句话说明</h2>
+<p>玄仪 1.0 是一次性付费下载的离线 App。你的问题、决定、结果与出生资料都保存在这台设备的 App 沙盒里；<strong>App 不发起任何网络请求</strong>，没有账号、没有登录、没有第三方 SDK、没有广告标识，也没有任何形式的按次付费解读。购买由 App Store 完成，玄仪不接触你的支付信息。App 内的插画类素材由生成式 AI 产出（见 <a href="#app-内图像素材的来源">App 内图像素材的来源</a>），与你的资料无关。</p>
+<h2>1. 在本机处理的数据</h2>
+<p>玄仪会在设备本地处理以下内容：</p>
+<ul>
+<li>你主动写下的问题、选择的主题、后续决定与结果；</li>
+<li>你主动填写的出生资料，包括出生日期和时间、性别、地点名称、经纬度与时区；</li>
+<li>完成入门引导等不含正文的本机设置。</li>
+</ul>
+<p>出生资料与私人动态是两份独立存储，删除其中一份不会连带删除另一份。</p>
+<p>四式排盘全部在本机完成，规则库随包分发。1.0 不提供深度解读，因此不产生解读语境，也不产生逐次同意审计。</p>
+<h2>2. 数据如何使用</h2>
+<ul>
+<li>私人动态用于在本机显示问题、决定、回看与结果轨迹；</li>
+<li>出生资料用于在本机生成需要本命信息的盘（八字与西方占星）；缺失或无法读取时，这两式如实受阻，不用默认资料补盘；</li>
+<li>本机设置用于恢复你明确选择的界面与安全状态。</li>
+</ul>
+<p>这些内容不用于广告、跨 App 追踪、用户画像、模型训练或人工审阅——1.0 没有任何把它们送出设备的通道。</p>
+<h2>3. 数据存放与保护</h2>
+<p>私人动态与出生资料分别保存在 iOS Application Support 目录下的玄仪 App 沙盒中。它们采用 iOS 完整文件保护、受保护暂存与原子替换；相关目录或文件会请求并回读系统备份排除状态。私人动态保存会回读暂存与最终文件的完整保护状态，并从最终文件重新解码、逐值核对；每次保存或整体删除也会清理由该 store 严格命名的崩溃暂存文件并再次枚举确认。App 进入非前台状态时，会用隐私遮罩覆盖主页面与敏感弹层快照。</p>
+<p>这些措施不等于独立 App 锁：设备已经解锁、且能打开玄仪的人仍可能看到内容。备份排除是 App 向系统声明的存储要求，并非对 Apple 系统服务的绝对保证；玄仪不读取、管理或承诺删除 Apple 管理的系统备份副本。部分不含正文的本机设置可能由系统备份。</p>
+<p>旧版本曾允许用户在 App 中配置模型凭据。1.0 不提供保存或读取入口，并在每次启动时按固定 Keychain 身份尝试删除旧凭据，再独立回读确认不存在。这一步不产生任何网络请求，写入的状态与诊断日志都不包含凭据值。</p>
+<h2>4. 网络、付费与第三方</h2>
+<h3>当前状态</h3>
+<p>1.0 <strong>没有任何网络请求</strong>：没有账号、登录、同步、广告、分析或崩溃上报，也没有第三方 SDK 或远程依赖。系统键盘、系统备份和其他 iOS 能力由 Apple 或你选择的第三方分别处理，并受其政策与设备设置约束。</p>
+<h3>付费</h3>
+<p>玄仪 1.0 是一次性付费下载，没有内购、没有订阅、没有广告，也没有按次收费的解读。购买、退款与收据由 App Store 处理；玄仪不接收、不保存你的支付方式、账单地址或 Apple 账号信息。</p>
+<h3>用户主动导出与系统分享</h3>
+<p>“我”→“本机记录”提供用户主动触发的文本导出：</p>
+<ul>
+<li>默认导出问题、主题、提问时间、决定、结果正文、结果评价和结果时间；</li>
+<li>出生资料默认不导出。只有你在导出确认页明确打开“包含出生信息（敏感）”，文件才逐项加入出生日期、出生时间、性别、出生地点、纬度、经度、时区与八字真太阳时偏好；确认页与实际文件共用同一字段清单。</li>
+</ul>
+<p>你点击“确认并导出”后，玄仪以原子写入和 iOS 完整文件保护在本机临时目录生成文本文件；只有逐字节回读内容且回读最终文件保护属性为完整保护后，才把它交给 iOS 系统分享面板，此时系统分享服务可读取该文件。写入或任一回读失败时会先删除并确认不存在；若删除也无法确认，App 会保留该临时文件的身份供下次重试，不会丢失清理目标。当你选择目标 App 或服务后，文件可能离开玄仪 App 沙盒；若该目标会联网或传往其他设备，文件也可能离开这台设备。分享面板结束后玄仪删除临时文件并回读确认文件已不存在。若删除或回读失败，App 会明确提示，且在确认旧文件删除前不会创建下一份导出。文件一旦交付，其保存、上传、转发、保留和删除由你的选择以及目标 App 或服务的隐私政策与功能决定，玄仪不能代其控制。</p>
+<h3>随包分发的第三方数据与许可</h3>
+<p>这些数据随 App 一同分发，不会因为你使用 App 而向外请求：</p>
+<table>
+<tr><th>用途</th><th>来源</th><th>许可</th></tr>
+<tr><td>出生地城市表</td><td>GeoNames <code>cities15000</code></td><td>CC BY 4.0（署名：<a href="https://www.geonames.org/">https://www.geonames.org/</a> ）</td></tr>
+<tr><td>时区代表点</td><td>IANA tz database <code>zone.tab</code></td><td>public domain</td></tr>
+<tr><td>农历与交节时刻表</td><td>lunar-python（6tail）</td><td>MIT</td></tr>
+<tr><td>星历基线</td><td>ephem</td><td>MIT</td></tr>
+</table>
+<p>同一份清单在 App 内「隐私」页的「数据来源与许可」一节可见。</p>
+<h3>App 内图像素材的来源</h3>
+<p>玄仪界面中的插画类素材——四式概念画、入门引导画、塔罗牌面与牌背——**由生成式 AI 工具产出，</p>
+<p>不是摄影作品，也不是人手绘制**。这些图片随 App 一同分发，是 App 自带内容，</p>
+<p><strong>不由你的任何资料生成，也不包含你的任何资料</strong>：生成发生在开发阶段，与你的使用无关，</p>
+<p>不会因为你填写出生资料或写下问题而改变。</p>
+<p>生成使用的服务见下表。玄仪不在这一环节向其发送你的任何数据；</p>
+<p>你使用 App 时不会触发任何图像生成请求。</p>
+<table>
+<tr><th>素材</th><th>生成工具</th></tr>
+<tr><td>塔罗牌面与牌背、四式概念画、入门引导画</td><td>OpenAI（经 Codex 内嵌图像工具）</td></tr>
+</table>
+<p>界面中的仪器盘面、云海大气、石材质感与所有动效由 App 内的 Metal 着色器实时计算生成，</p>
+<p>不使用预先生成的图片。</p>
+<h2>5. 保留与分别删除</h2>
+<p>本机资料会保留到你删除或卸载 App，没有自动过期清理：</p>
+<ul>
+<li>“我”→“本机记录”可清除问题、决定、结果及该记录 store 严格命名的崩溃暂存文件；只有重新枚举不存在且重新加载为空后才显示清除完成；</li>
+<li>“我”→“本命资料”可单独删除出生资料。</li>
+</ul>
+<p>删除出生资料不会连带删除私人动态，反之亦然。删除失败或独立回读未确认时，App 不会显示为已删除。</p>
+<p>Apple 管理的系统备份不属于玄仪当前可直接查询或删除的范围，可通过 Apple 提供的设备与备份设置管理。</p>
+<h2>6. 你的选择</h2>
+<p>你可以不填写或删除出生资料；相应本命方法会如实受阻，不会用默认资料补一张与你无关的盘。你可以跳过或重看入门引导；跳过不会生成个人问题。1.0 没有必须授予的系统权限，也没有需要你授权的网络功能。</p>
+<h2>7. 政策变更</h2>
+<p>若数据类型、用途、接收方或产品能力发生实质变化，我们会在新版 App 和公开政策页中更新说明；在法律或平台规则要求时，会重新取得必要同意。</p>
+<h2>8. 联系我们</h2>
+<ul>
+<li>运营主体：WU LEIZHI（个人开发者）</li>
+<li>隐私联系邮箱：wuleizhi55@gmail.com</li>
+<li>通讯地址：如需书面联系，请先发邮件。</li>
+</ul>
+<footer>玄仪 · WU LEIZHI · <a href="mailto:wuleizhi55@gmail.com">wuleizhi55@gmail.com</a></footer>
+</body>
+</html>
