@@ -25,7 +25,7 @@ footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line
 </style>
 </head>
 <body>
-<nav><a href="./">← 玄仪支持</a></nav>
+<nav id="top"><a href="./">← 玄仪支持</a> · <a href="#english">English version below ↓</a></nav>
 <h1>玄仪 隐私政策</h1>
 <p class="meta">生效日期：2026 年 9 月 20 日 · 适用版本 1.0</p>
 
@@ -104,6 +104,89 @@ footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--line
 <li>隐私联系邮箱：wuleizhi55@gmail.com</li>
 <li>通讯地址：如需书面联系，请先发邮件。</li>
 </ul>
-<footer>玄仪 · WU LEIZHI · <a href="mailto:wuleizhi55@gmail.com">wuleizhi55@gmail.com</a></footer>
+<hr id="english" style="margin:3.5rem 0 0;border:0;border-top:1px solid var(--line)">
+
+<h1 lang="en" style="margin-top:2.2rem">Xuanyi Privacy Policy</h1>
+<p class="meta" lang="en">Effective 20 September 2026 · Applies to version 1.0 · <a href="#top">中文版本见本页上半部分</a></p>
+
+<h2 lang="en">In one sentence</h2>
+<p lang="en">Xuanyi 1.0 is a one-time paid download that runs offline. Your questions, decisions, outcomes and birth details are stored in the app's sandbox on this device. <strong>The app makes no network requests of any kind.</strong> There is no account, no sign-in, no third-party SDK, no advertising identifier, and no pay-per-reading of any form. Purchase is handled by the App Store; Xuanyi never sees your payment information. The illustrations inside the app were produced by generative AI (see <a href="#image-assets-en">Where the in-app imagery comes from</a>) and have nothing to do with your data.</p>
+
+<h2 lang="en">1. What is processed on this device</h2>
+<ul lang="en">
+<li>the questions you write, the topic you pick, and the decisions and outcomes you record afterwards;</li>
+<li>the birth details you choose to enter: birth date and time, sex, place name, latitude, longitude and time zone;</li>
+<li>local settings that contain no content of their own, such as whether you finished onboarding.</li>
+</ul>
+<p lang="en">Birth details and your private thread are two separate stores. Deleting one does not delete the other.</p>
+<p lang="en">All four charts are computed on device, from rule tables bundled with the app. Version 1.0 offers no deep reading, so there is no interpretation context and no per-use consent audit.</p>
+
+<h2 lang="en">2. How it is used</h2>
+<ul lang="en">
+<li>Your private thread is used to show, on this device, your question, your decision, your check-back and the outcome trail.</li>
+<li>Birth details are used on this device to build the charts that require natal information (Bazi and Western astrology). When they are missing or unreadable, those two instruments are blocked honestly — no default data is substituted.</li>
+<li>Local settings restore the interface and safety state you explicitly chose.</li>
+</ul>
+<p lang="en">None of this is used for advertising, cross-app tracking, profiling, model training or human review. Version 1.0 has no channel of any kind for sending it off the device.</p>
+
+<h2 lang="en">3. Storage and protection</h2>
+<p lang="en">Your private thread and your birth details are stored separately in the Xuanyi sandbox under the iOS Application Support directory. Both use iOS complete file protection, protected staging files and atomic replacement; the relevant directories and files request backup-exclusion from the system and then read that state back. Saving a thread reads back the protection state of both the staging file and the final file, then re-decodes the final file and checks it value by value. Every save or full deletion also cleans up crash-staging files under that store's strict naming scheme and re-enumerates to confirm. When the app leaves the foreground, a privacy overlay covers snapshots of the main screen and of sensitive sheets.</p>
+<p lang="en">These measures are not a separate app lock: anyone who can unlock the device and open Xuanyi can still see the content. Backup exclusion is a storage request the app makes to the system, not an absolute guarantee about Apple's system services; Xuanyi does not read, manage or promise to delete backup copies held by Apple. Some local settings that contain no content may be included in system backups.</p>
+<p lang="en">An older version allowed model credentials to be configured inside the app. Version 1.0 offers no way to save or read them, and on every launch it attempts to delete any old credential under a fixed Keychain identity and then independently reads back to confirm it is gone. That step makes no network request, and neither the stored state nor the diagnostic log contains any credential value.</p>
+
+<h2 lang="en">4. Network, payment and third parties</h2>
+<h3 lang="en">Current state</h3>
+<p lang="en">Version 1.0 makes <strong>no network requests</strong>: no account, sign-in, sync, advertising, analytics or crash reporting, and no third-party SDK or remote dependency. The system keyboard, system backup and other iOS capabilities are handled by Apple or by third parties you have chosen, and are governed by their own policies and your device settings.</p>
+<h3 lang="en">Payment</h3>
+<p lang="en">Xuanyi 1.0 is a one-time paid download with no in-app purchases, no subscription, no advertising and no pay-per-reading. Purchases, refunds and receipts are handled by the App Store; Xuanyi does not receive or store your payment method, billing address or Apple Account information.</p>
+<h3 lang="en">Exports you start yourself</h3>
+<p lang="en">Profile → On-device records offers a text export that only you can trigger:</p>
+<ul lang="en">
+<li>by default it exports the question, topic, time asked, decision, outcome text, outcome rating and outcome time;</li>
+<li>birth details are <em>not</em> exported by default. Only if you explicitly turn on “Include birth information (sensitive)” on the confirmation screen does the file add birth date, birth time, sex, birthplace, latitude, longitude, time zone and the true-solar-time preference. The confirmation screen and the actual file share one field list.</li>
+</ul>
+<p lang="en">After you tap Confirm and export, Xuanyi writes the text file atomically into a local temporary directory with iOS complete file protection. Only after reading the content back byte for byte, and confirming the final file's protection attribute is complete protection, does it hand the file to the iOS share sheet — at which point the system share service can read it. If the write or either read-back fails, the file is deleted and the deletion confirmed; if deletion cannot be confirmed, the app keeps that temporary file's identity for the next attempt rather than losing track of it. Once you pick a target app or service, the file may leave the Xuanyi sandbox, and if that target uses the network or syncs to other devices, the file may leave this device too. When the share sheet closes, Xuanyi deletes the temporary file and reads back to confirm it is gone; if deletion or read-back fails it says so plainly, and it will not create the next export until the old file is confirmed deleted. Once delivered, how the file is stored, uploaded, forwarded, retained or deleted is decided by your choice and by the target app or service's own policy — Xuanyi cannot control that on your behalf.</p>
+<h3 lang="en">Third-party data bundled with the app</h3>
+<p lang="en">These data sets ship inside the app and are never requested over the network because you use it:</p>
+<table lang="en">
+<tr><th>Purpose</th><th>Source</th><th>Licence</th></tr>
+<tr><td>Birthplace city table</td><td>GeoNames <code>cities15000</code></td><td>CC BY 4.0 (attribution: <a href="https://www.geonames.org/">https://www.geonames.org/</a>)</td></tr>
+<tr><td>Time-zone reference points</td><td>IANA tz database <code>zone.tab</code></td><td>public domain</td></tr>
+<tr><td>Lunar calendar and solar-term instants</td><td>lunar-python (6tail)</td><td>MIT</td></tr>
+<tr><td>Ephemeris baseline</td><td>ephem</td><td>MIT</td></tr>
+</table>
+<p lang="en">The same list appears inside the app, under Privacy → Data sources and licences.</p>
+
+<h2 lang="en" id="image-assets-en">Where the in-app imagery comes from</h2>
+<p lang="en">The illustrations in Xuanyi — the four method concept paintings, the onboarding artwork, and the tarot card faces and backs — <strong>were produced with generative AI tools. They are not photographs and were not drawn by hand.</strong> These images ship with the app as its own content. <strong>They are not generated from any of your data and contain none of it</strong>: generation happened during development, unrelated to your use, and nothing about them changes because you enter birth details or write a question. The tools used are listed below. Xuanyi sends none of your data to them, and using the app triggers no image-generation request.</p>
+<table lang="en">
+<tr><th>Asset</th><th>Tool</th></tr>
+<tr><td>Tarot faces and backs, four method concept paintings, onboarding artwork</td><td>OpenAI (via the image tool embedded in Codex)</td></tr>
+</table>
+<p lang="en">The instrument dials, the sea of clouds, the stone textures and every animation in the interface are computed in real time by Metal shaders inside the app, not from pre-generated images.</p>
+
+<h2 lang="en">5. Retention and separate deletion</h2>
+<p lang="en">On-device data is kept until you delete it or uninstall the app; there is no automatic expiry:</p>
+<ul lang="en">
+<li>Profile → On-device records clears questions, decisions, outcomes and the crash-staging files under that store's strict naming scheme; it reports success only after re-enumeration finds nothing and a reload comes back empty;</li>
+<li>Profile → Birth information deletes the birth details on their own.</li>
+</ul>
+<p lang="en">Deleting birth details does not delete your private thread, and vice versa. If a deletion fails, or the independent read-back does not confirm it, the app does not report it as deleted.</p>
+<p lang="en">System backups managed by Apple are outside what Xuanyi can query or delete directly; manage them through Apple's device and backup settings.</p>
+
+<h2 lang="en">6. Your choices</h2>
+<p lang="en">You may leave birth details blank or delete them; the natal methods will then be blocked honestly rather than standing in someone else's chart. You may skip or re-watch onboarding; skipping generates no personal question. Version 1.0 requires no system permission and has no network feature for you to authorise.</p>
+
+<h2 lang="en">7. Changes to this policy</h2>
+<p lang="en">If the categories of data, their purposes, their recipients or the product's capabilities change materially, we will update this policy in a new version of the app and on this public page, and will obtain any consent required by law or platform rules again.</p>
+
+<h2 lang="en">8. Contact</h2>
+<ul lang="en">
+<li>Operator: WU LEIZHI (individual developer)</li>
+<li>Privacy contact: wuleizhi55@gmail.com</li>
+<li>Postal address: please email first if you need to write.</li>
+</ul>
+
+<footer>玄仪 · Xuanyi · WU LEIZHI · <a href="mailto:wuleizhi55@gmail.com">wuleizhi55@gmail.com</a></footer>
 </body>
 </html>
